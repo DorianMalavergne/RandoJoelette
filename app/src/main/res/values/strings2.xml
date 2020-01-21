@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nom_randonne">Randonnée</string>
+    <string name="date_randonne">Date de la randonnée</string>
+    <string name="lieu">Lieu de la randonnée</string>
+    <string name="nb_participants">Nombre de participants</string>
+    <string name="echeance">Echéance de réponse</string>
+    <string name="participation">Je participe</string>
+
+    <string name="valide_oui">OUI</string>
+    <string name="valide_non">NON</string>
+
+</resources>

@@ -15,8 +15,8 @@
         <item>Randonneur externe</item>
         <item>Randonneur handicapé</item>
     </string-array>
-    <string name="label_nom_asso">Nom de l\'association</string>
     <string name="label_nom_president">Nom du président</string>
+    <string name="label_nom_asso">Nom de l\'association</string>
     <string name="label_adresse_association">Adresse de l\'association</string>
     <string name="tel_association">Téléphone de l\'association</string>
     <string name="btn_valider">Valider</string>
