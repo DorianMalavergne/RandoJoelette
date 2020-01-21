@@ -41,13 +41,13 @@
         android:text="@string/lieu"/>
 
     <EditText
-         android:id="@+id/saisie_postale_adresse"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-         android:hint="@string/saisie_adresse"/>
+        android:id="@+id/saisie_postale_adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:hint="@string/saisie_adresse"/>
 
     <TextView
         android:id="@+id/label_nb_participant"

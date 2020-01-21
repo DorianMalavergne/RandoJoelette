@@ -41,13 +41,30 @@
         android:text="@string/lieu"/>
 
     <EditText
-         android:id="@+id/saisie_postale_adresse"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-         android:hint="@string/saisie_adresse"/>
+        android:id="@+id/saisie_postale_adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:hint="@string/saisie_adresse"/>
+
+    <TextView
+        android:id="@+id/label_nb_participant_requis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:text="@string/nb_participants_requis"/>
+
+    <EditText
+        android:id="@+id/saisie_nombre_requis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:hint="@string/nb_part"/>
 
     <TextView
         android:id="@+id/label_nb_participant"
@@ -55,16 +72,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:text="@string/nb_participants"/>
+        android:text="@string/nb_participants_accepte"/>
 
     <EditText
-        android:id="@+id/saisie_nombre"
+        android:id="@+id/saisie_nombre_accepte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/nb_part"/>
+        android:hint="@string/nb_accepte"/>
 
     <TextView
         android:id="@+id/label_echeance"
@@ -83,41 +100,5 @@
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/saisie_echeance"/>
 
-    <TextView
-        android:id="@+id/label_participe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:text="@string/participation"/>
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btn_oui"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_oui"
-                android:layout_column="1"/>
-
-            <Button
-                android:id="@+id/btn_non"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_non"
-                android:layout_column="2"/>
-
-        </TableRow>
-
-    </TableLayout>
 
 </LinearLayout>
