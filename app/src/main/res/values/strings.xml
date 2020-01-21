@@ -6,4 +6,7 @@
     <string name="btn_inscription">Inscription</string>
     <string name="hint_identifiant">Saisir votre identifiant ici</string>
     <string name="hint_mdp">Saisir votre mot de passe ici</string>
+
+
+
 </resources>
