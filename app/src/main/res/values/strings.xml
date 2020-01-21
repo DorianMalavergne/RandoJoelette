@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RandoJoelette</string>
+    <string name="label_identifiant">Identifiant</string>
+    <string name="label_mdp">Mot de passe</string>
+    <string name="btn_connexion">Connexion</string>
+    <string name="btn_inscription">Inscription</string>
+    <string name="hint_identifiant">Saisir votre identifiant ici</string>
+    <string name="hint_mdp">Saisir votre mot de passe ici</string>
 </resources>
