@@ -56,5 +56,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/btn_inscription"/>
-    
+
 </LinearLayout>
