@@ -31,4 +31,8 @@
     <!-- asso_main_activity -->
     <string name="label_rando_active">Les randonnées actives</string>
     <string name="btn_creer_rando">Créer une randonnée</string>
+
+    <!-- randomember_main-activity *** assomember_main_activity *** handiassomember_main_activity -->
+    <string name="label_rando_dispo">Les randonnées disponibles</string>
+    <string name="label_mes_rando">Mes randonnées</string>
 </resources>
