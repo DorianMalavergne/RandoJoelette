@@ -8,7 +8,7 @@
     <string name="hint_identifiant">Saisir votre identifiant ici</string>
     <string name="hint_mdp">Saisir votre mot de passe ici</string>
 
-    <!-- account_assomember_activity.xml -->
+    <!-- account_asso_activity->
     <string-array name="array_statut">
         <item>Association</item>
         <item>Randonneur membre</item>
