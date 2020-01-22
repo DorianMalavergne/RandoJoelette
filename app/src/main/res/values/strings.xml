@@ -8,16 +8,23 @@
     <string name="hint_identifiant">Saisir votre identifiant ici</string>
     <string name="hint_mdp">Saisir votre mot de passe ici</string>
 
-    <!-- account_asso_activity->
     <string-array name="array_statut">
         <item>Association</item>
         <item>Randonneur membre</item>
         <item>Randonneur externe</item>
         <item>Randonneur handicapé</item>
     </string-array>
+    <string name="btn_valider">Valider</string>
+
+    <!-- account_asso_activity -->
     <string name="label_nom_president">Nom du président</string>
     <string name="label_nom_asso">Nom de l\'association</string>
     <string name="label_adresse_association">Adresse de l\'association</string>
     <string name="tel_association">Téléphone de l\'association</string>
-    <string name="btn_valider">Valider</string>
+
+    <!-- account_assomember_activity ### account_randomember_activity ### account_handimember_activity -->
+    <string name ="label_nom_randonneur">Nom</string>
+    <string name="label_prenom_randonneur">Prénom</string>
+    <string name="label_adresse_randonneur">Adresse</string>
+    <string name="label_tel_randonneur">Téléphone</string>
 </resources>
