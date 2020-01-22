@@ -35,4 +35,10 @@
     <!-- randomember_main-activity *** assomember_main_activity *** handiassomember_main_activity -->
     <string name="label_rando_dispo">Les randonnées disponibles</string>
     <string name="label_mes_rando">Mes randonnées</string>
+    <string name="valide_valider">Valider</string>
+    <string name="valide_annuler">Annuler</string>
+    <string name="participation_rando">Participation à la randonnée</string>
+    <string name="motif">Motif</string>
+    <string name="saisie_motif">Saisir le motif</string>
+    <string name="annule_participation">J\'annule ma participation</string>
 </resources>
