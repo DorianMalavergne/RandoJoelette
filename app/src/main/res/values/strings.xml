@@ -27,4 +27,8 @@
     <string name="label_prenom_randonneur">Prénom</string>
     <string name="label_adresse_randonneur">Adresse</string>
     <string name="label_tel_randonneur">Téléphone</string>
+
+    <!-- asso_main_activity -->
+    <string name="label_rando_active">Les randonnées actives</string>
+    <string name="btn_creer_rando">Créer une randonnée</string>
 </resources>

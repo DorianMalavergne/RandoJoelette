@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Assomember_valid_event_activity"
+    tools:context=".asso_read_active_event_activity"
     android:orientation="vertical">
 
     <TextView
