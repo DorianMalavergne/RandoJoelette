@@ -9,6 +9,7 @@
     <string name="hint_mdp">Saisir votre mot de passe ici</string>
 
     <string-array name="array_statut">
+        <item>Choisir votre statut</item>
         <item>Association</item>
         <item>Randonneur membre</item>
         <item>Randonneur externe</item>
@@ -41,4 +42,9 @@
     <string name="motif">Motif</string>
     <string name="saisie_motif">Saisir le motif</string>
     <string name="annule_participation">J\'annule ma participation</string>
+
+    <string name="label_inscription_association">INSCRIPTION ASSOCIATION</string>
+    <string name="label_inscription_membre">INSCRIPTION RANDONNEUR MEMBRE</string>
+    <string name="label_inscription_externe">INSCRIPTION RANDONNEUR EXTERNE</string>
+    <string name="label_inscription_handicape">INSCRIPTION RANDONNEUR HANDICAPE</string>
 </resources>

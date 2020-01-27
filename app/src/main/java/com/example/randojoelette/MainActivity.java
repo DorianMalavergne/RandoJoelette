@@ -45,15 +45,28 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                requete.setText(response.toString());
-                                Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
-                                startActivity(intent);
+                                try {
+                                    if (response.getInt("idRandonneur") == 0) {
+                                        requete.setText("Identifiant et/ou mot de passe incorrect");
+                                    } else {
+                                        requete.setText(response.toString());
+                                        Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("statut", response.getString("statut"));
+                                        bundle.putString("nom", response.getString("nom"));
+                                        bundle.putString("prenom", response.getString("prenom"));
+                                        intent.putExtras(bundle);
+                                        startActivity(intent);
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            requete.setText(error.getMessage());
-                        }
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        requete.setText(error.getMessage());
+                    }
                 });
 
                 queue.add(jsonObjectRequest);
@@ -63,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         btn_inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AccountAssomemberActivity.class);
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
                 startActivity(intent);
             }
         });

@@ -7,12 +7,12 @@
     tools:context=".AccountAssoActivity"
     android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spinner_statut"
+    <TextView
+        android:id="@+id/label_inscription_membre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:entries="@array/array_statut"/>
+        android:text="@string/label_inscription_association" />
 
     <TextView
         android:id="@+id/label_nom_asso"
