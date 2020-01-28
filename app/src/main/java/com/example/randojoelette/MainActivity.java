@@ -33,13 +33,18 @@ public class MainActivity extends AppCompatActivity {
         final EditText editText_mdp = (EditText) findViewById(R.id.saisie_mdp);
 
         final RequestQueue queue = Volley.newRequestQueue(this);
+        final String url = "http://192.168.43.92:8080/connexionUtilisateur?login";
 
         btn_connexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 String id = editText_identifiant.getText().toString();
                 String mdp = editText_mdp.getText().toString();
+<<<<<<< Updated upstream
                 String url = "http://185.224.139.170:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
+=======
+                String url = "http://192.168.43.116:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
+>>>>>>> Stashed changes
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
