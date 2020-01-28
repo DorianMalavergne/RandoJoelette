@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(final View v) {
                 String id = editText_identifiant.getText().toString();
                 String mdp = editText_mdp.getText().toString();
-                String url = "http://192.168.43.92:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
+                String url = "http://185.224.139.170:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
