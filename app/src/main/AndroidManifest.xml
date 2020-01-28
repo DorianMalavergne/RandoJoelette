@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AssomemberMainActivity"/>
+        <activity android:name=".AssoMainActivity"/>
         <activity android:name=".AccountAssoActivity" />
         <activity android:name=".AccountAssomemberActivity"/>
         <activity android:name=".AccountActivity"/>

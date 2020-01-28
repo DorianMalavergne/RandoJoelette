@@ -40,11 +40,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(final View v) {
                 String id = editText_identifiant.getText().toString();
                 String mdp = editText_mdp.getText().toString();
-<<<<<<< Updated upstream
+
                 String url = "http://185.224.139.170:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
-=======
-                String url = "http://192.168.43.116:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
->>>>>>> Stashed changes
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
@@ -55,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
                                         requete.setText("Identifiant et/ou mot de passe incorrect");
                                     } else {
                                         requete.setText(response.toString());
-                                        Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
                                         Bundle bundle = new Bundle();
-                                        bundle.putString("statut", response.getString("statut"));
+                                        Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
+
+                                        if(response.getString("statut").equals("asso")) {
+                                            intent = new Intent(MainActivity.this, AssoMainActivity.class);
+                                            startActivity(intent);
+                                        }
+
                                         bundle.putString("nom", response.getString("nom"));
                                         bundle.putString("prenom", response.getString("prenom"));
                                         intent.putExtras(bundle);
