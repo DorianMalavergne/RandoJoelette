@@ -2,21 +2,9 @@ package com.example.randojoelette;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-
-import org.json.JSONArray;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AssomemberMainActivity extends AppCompatActivity {
 

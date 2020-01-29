@@ -47,4 +47,6 @@
     <string name="label_inscription_membre">INSCRIPTION RANDONNEUR MEMBRE</string>
     <string name="label_inscription_externe">INSCRIPTION RANDONNEUR EXTERNE</string>
     <string name="label_inscription_handicape">INSCRIPTION RANDONNEUR HANDICAPE</string>
+
+    <string name="btn_modifier_randonnee">Modifier cette randonnée</string>
 </resources>

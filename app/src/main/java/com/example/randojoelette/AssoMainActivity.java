@@ -3,6 +3,7 @@ package com.example.randojoelette;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -26,12 +27,15 @@ import java.util.List;
 
 public class AssoMainActivity extends AppCompatActivity {
 
+    private ListView listeRando;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_main_activity);
 
         Button btn_creerRando = (Button) findViewById(R.id.btn_creer_rando);
+        listeRando = (ListView) findViewById(R.id.list_rando_active);
 
         final TextView label_identite = (TextView) findViewById(R.id.label_identite);
 
@@ -70,11 +74,19 @@ public class AssoMainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        listeRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(AssoMainActivity.this, AssoReadActiveEventActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void afficherListeRandoActive(List<String> listeRandonneesActives) {
 
-        ListView listeRando = (ListView) findViewById(R.id.list_rando_active);
+        listeRando = (ListView) findViewById(R.id.list_rando_active);
 
         ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listeRandonneesActives);

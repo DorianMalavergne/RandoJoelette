@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".asso_read_active_event_activity"
+    tools:context=".AssoReadActiveEventActivity"
     android:orientation="vertical">
 
     <TextView
@@ -20,14 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
         android:text="@string/date_randonne"/>
 
     <EditText
         android:id="@+id/saisie_date_rando"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/saisie_date"/>
@@ -37,14 +35,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/lieu"/>
 
     <EditText
         android:id="@+id/saisie_postale_adresse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/saisie_adresse"/>
@@ -54,14 +51,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/nb_participants_requis"/>
 
     <EditText
         android:id="@+id/saisie_nombre_requis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/nb_part"/>
@@ -71,14 +67,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/nb_participants_accepte"/>
 
     <EditText
         android:id="@+id/saisie_nombre_accepte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/nb_accepte"/>
@@ -88,17 +83,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/echeance"/>
 
     <EditText
         android:id="@+id/saisie_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:hint="@string/saisie_echeance"/>
+    
+    <Button
+        android:id="@+id/btn_modifier_rando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_modifier_randonnee" />
 
 
 </LinearLayout>
