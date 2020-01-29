@@ -16,17 +16,29 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_read_active_event_activity);
 
-        TextView textView = (TextView) findViewById(R.id.label_nom_rando);
-        TextView textView1 = (TextView) findViewById(R.id.label_date_randonne);
-
         Intent intent = getIntent();
         Bundle extra = intent.getExtras();
 
-        String libelle = extra.getString("libelle");
-        textView.setText(libelle);
+        TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
+        EditText editTextDate = (EditText) findViewById(R.id.date_randonnee);
+        EditText editTextLieu = (EditText) findViewById(R.id.lieu_randonnee);
+        EditText editTextParticipantMin = (EditText) findViewById(R.id.nombre_requis);
+        EditText editTextParticipantAccepte = (EditText) findViewById(R.id.nombre_accepte);
+        EditText editTextDateEcheance = (EditText) findViewById(R.id.date_echeance);
 
+        String libelle = extra.getString("libelle");
         String date = extra.getString("date");
-        textView1.setText(date);
+        String lieu = extra.getString("lieu");
+        String participantRequis = extra.getString("participantRequis");
+        String participantAccepte = extra.getString("participantAccepte");
+        String dataEcheance = extra.getString("dataEcheance");
+
+        textViewNomRando.setText(libelle);
+        editTextDate.setText(date);
+        editTextLieu.setText(lieu);
+        editTextParticipantMin.setText(participantRequis);
+        editTextParticipantAccepte.setText(participantAccepte);
+        editTextDateEcheance.setText(dataEcheance);
 
 
         Button btnModifierRando = (Button) findViewById(R.id.btn_modifier_rando);

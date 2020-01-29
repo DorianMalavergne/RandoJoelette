@@ -93,8 +93,13 @@ public class AssoMainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            System.out.println(response.toString());
                             bundle.putString("libelle", response.getString("libelle"));
                             bundle.putString("date", response.getString("date"));
+                            bundle.putString("lieu", response.getString("lieu"));
+                            //bundle.putString("participantRequis", response.getString("participant_min"));
+                            //bundle.putString("participantAccepte", response.getString("participant_inscrit"));
+                            //bundle.putString("dataEcheance", response.getString("date_echeance"));
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } catch (Exception e) {

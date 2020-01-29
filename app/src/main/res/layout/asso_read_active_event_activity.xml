@@ -16,19 +16,19 @@
         android:text="@string/nom_randonne"/>
 
     <TextView
-        android:id="@+id/label_date_randonne"
+        android:id="@+id/label_date_randonnee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/date_randonne"/>
 
     <EditText
-        android:id="@+id/saisie_date_rando"
+        android:id="@+id/date_randonnee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_date"/>
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_lieu"
@@ -39,12 +39,12 @@
         android:text="@string/lieu"/>
 
     <EditText
-        android:id="@+id/saisie_postale_adresse"
+        android:id="@+id/lieu_randonnee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_adresse"/>
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_nb_participant_requis"
@@ -55,12 +55,12 @@
         android:text="@string/nb_participants_requis"/>
 
     <EditText
-        android:id="@+id/saisie_nombre_requis"
+        android:id="@+id/nombre_requis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/nb_part"/>
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_nb_participant"
@@ -71,12 +71,12 @@
         android:text="@string/nb_participants_accepte"/>
 
     <EditText
-        android:id="@+id/saisie_nombre_accepte"
+        android:id="@+id/nombre_accepte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/nb_accepte"/>
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_echeance"
@@ -87,12 +87,12 @@
         android:text="@string/echeance"/>
 
     <EditText
-        android:id="@+id/saisie_date"
+        android:id="@+id/date_echeance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_echeance"/>
+        android:focusable="false"/>
     
     <Button
         android:id="@+id/btn_modifier_rando"
