@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,10 +17,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,7 @@ import java.util.List;
 public class AssoMainActivity extends AppCompatActivity {
 
     private ListView listeRando;
+    private List<String> listeRandonneesActives = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +41,12 @@ public class AssoMainActivity extends AppCompatActivity {
         Button btn_creerRando = (Button) findViewById(R.id.btn_creer_rando);
         listeRando = (ListView) findViewById(R.id.list_rando_active);
 
-        final TextView label_identite = (TextView) findViewById(R.id.label_identite);
+        final RequestQueue queue = Volley.newRequestQueue(this);
 
-        final List<String> listeRandonneesActives = new ArrayList<String>();
+        final TextView label_identite = (TextView) findViewById(R.id.label_identite);
         label_identite.setText("Bienvenue Admnistrateur");
 
-        RequestQueue queue = Volley.newRequestQueue(this);
+
         String url = "http://185.224.139.170:8080/afficheRandonneeActive";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
@@ -52,7 +56,7 @@ public class AssoMainActivity extends AppCompatActivity {
                 try {
                     for(int i = 0; i < response.length(); i++) {
                         listeRandonneesActives.add(response.getJSONObject(i).getString("libelle"));
-                        afficherListeRandoActive(listeRandonneesActives);
+                        afficherListeRandoActive();
                     }
                 } catch (Exception e) {
                     label_identite.setText("Erreur lors du traitement de l'affichage des listes des randonnées actives");
@@ -78,13 +82,38 @@ public class AssoMainActivity extends AppCompatActivity {
         listeRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(AssoMainActivity.this, AssoReadActiveEventActivity.class);
-                startActivity(intent);
+                final Bundle bundle = new Bundle();
+                final Intent intent = new Intent(AssoMainActivity.this, AssoReadActiveEventActivity.class);
+
+                String name = listeRandonneesActives.get(position);
+                String url = "http://185.224.139.170:8080/getRandonnee?name=" + name;
+
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            bundle.putString("libelle", response.getString("libelle"));
+                            bundle.putString("date", response.getString("date"));
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+
+                queue.add(jsonObjectRequest);
             }
         });
     }
 
-    public void afficherListeRandoActive(List<String> listeRandonneesActives) {
+    public void afficherListeRandoActive() {
 
         listeRando = (ListView) findViewById(R.id.list_rando_active);
 
