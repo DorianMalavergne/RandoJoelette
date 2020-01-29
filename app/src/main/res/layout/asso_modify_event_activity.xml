@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".handiassomember_valid_event_activity"
+    tools:context=".AssoModifyEventActivity"
     android:orientation="vertical">
 
     <TextView
@@ -85,7 +85,7 @@
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:text="@string/participation_rando"/>
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
@@ -134,5 +134,5 @@
                 android:layout_column="1"
                 android:hint="@string/saisie_motif"/>
         </TableRow>
-    </TableLayout>
+    </TableLayout>-->
 </LinearLayout>

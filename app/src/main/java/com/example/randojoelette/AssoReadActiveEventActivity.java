@@ -16,6 +16,8 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_read_active_event_activity);
 
+        Button btnModifierRando = (Button) findViewById(R.id.btn_modifier);
+
         Intent intent = getIntent();
         Bundle extra = intent.getExtras();
 
@@ -24,7 +26,7 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         EditText editTextLieu = (EditText) findViewById(R.id.lieu_randonnee);
         EditText editTextParticipantMin = (EditText) findViewById(R.id.nombre_requis);
         EditText editTextParticipantAccepte = (EditText) findViewById(R.id.nombre_accepte);
-        EditText editTextDateEcheance = (EditText) findViewById(R.id.date_echeance);
+        final EditText editTextDateEcheance = (EditText) findViewById(R.id.date_echeance);
 
         String libelle = extra.getString("libelle");
         String date = extra.getString("date");
@@ -39,9 +41,6 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         editTextParticipantMin.setText(participantRequis);
         editTextParticipantAccepte.setText(participantAccepte);
         editTextDateEcheance.setText(dataEcheance);
-
-
-        Button btnModifierRando = (Button) findViewById(R.id.btn_modifier_rando);
 
         btnModifierRando.setOnClickListener(new View.OnClickListener() {
             @Override
