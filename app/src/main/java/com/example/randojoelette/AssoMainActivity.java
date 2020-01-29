@@ -1,7 +1,10 @@
 package com.example.randojoelette;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +30,8 @@ public class AssoMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_main_activity);
+
+        Button btn_creerRando = (Button) findViewById(R.id.btn_creer_rando);
 
         final TextView label_identite = (TextView) findViewById(R.id.label_identite);
 
@@ -57,6 +62,14 @@ public class AssoMainActivity extends AppCompatActivity {
         });
 
         queue.add(jsonArrayRequest);
+
+        btn_creerRando.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(AssoMainActivity.this, AssoAddEventActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void afficherListeRandoActive(List<String> listeRandonneesActives) {

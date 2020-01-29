@@ -23,7 +23,7 @@
         <activity android:name=".AccountAssoActivity" />
         <activity android:name=".AccountAssomemberActivity"/>
         <activity android:name=".AccountActivity"/>
-        <activity android:name=".asso_add_event_activity"/>
+        <activity android:name=".AssoAddEventActivity"/>
     </application>
 
 </manifest>

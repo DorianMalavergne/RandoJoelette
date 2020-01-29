@@ -6,7 +6,7 @@ import android.os.PersistableBundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class asso_add_event_activity extends AppCompatActivity {
+public class AssoAddEventActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
