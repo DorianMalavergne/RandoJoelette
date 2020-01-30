@@ -74,33 +74,40 @@
         android:layout_gravity="center"
         android:text="@string/label_participation"/>
 
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:id="@+id/row1"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
     <Button
         android:id="@+id/btn_valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="@string/btn_valider"/>
 
     <Button
         android:id="@+id/btn_annuler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="@string/btn_annuler"/>
+    </TableRow>
 
-    <TextView
-        android:id="@+id/label_motif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_gravity="center"
-        android:text="@string/label_motif"/>
+    <TableRow
+        android:id="@+id/row2"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/saisie_motif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_motif"/>
 
-    <EditText
-        android:id="@+id/saisie_motif"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_motif"/>
-
-
+    </TableRow>
+</TableLayout>
 </LinearLayout>
