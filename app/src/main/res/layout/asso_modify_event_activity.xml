@@ -1,138 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AssoModifyEventActivity"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/label_nom_rando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:text="@string/nom_randonne"/>
+        android:text="@string/label_nom_rando"/>
 
     <TextView
-        android:id="@+id/label_date_randonne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/date_randonne"/>
-
-    <EditText
-        android:id="@+id/saisie_date_rando"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_date"/>
-
-    <TextView
-        android:id="@+id/label_lieu"
+        android:id="@+id/label_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:text="@string/lieu"/>
-
-    <EditText
-        android:id="@+id/saisie_postale_adresse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_adresse"/>
-
-    <TextView
-        android:id="@+id/label_nb_participant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:text="@string/nb_participants_requis"/>
-
-    <EditText
-        android:id="@+id/saisie_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/nb_part"/>
-
-    <TextView
-        android:id="@+id/label_echeance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:text="@string/echeance"/>
+        android:text="@string/label_date_rando"/>
 
     <EditText
         android:id="@+id/saisie_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:hint="@string/saisie_echeance"/>
+        android:hint="@string/hint_date"/>
+
+    <TextView
+        android:id="@+id/label_lieu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_gravity="center"
+        android:text="@string/label_lieu"/>
+
+    <EditText
+        android:id="@+id/saisie_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_lieu"/>
+
+    <TextView
+        android:id="@+id/label_nb_participant_requis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_gravity="center"
+        android:text="@string/label_nb_participant_requis"/>
+
+    <EditText
+        android:id="@+id/saisie_nb_participant_min"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_nb_participant_min"/>
+
+    <TextView
+        android:id="@+id/label_date_echeance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_gravity="center"
+        android:text="@string/label_date_echeance"/>
+
+    <EditText
+        android:id="@+id/saisie_echeance_reponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_date_echeance"/>
 
     <TextView
         android:id="@+id/label_participe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:text="@string/participation_rando"/>
+        android:layout_gravity="center"
+        android:text="@string/label_participation"/>
 
-    <!--<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/btn_valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_valider"/>
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center">
+    <Button
+        android:id="@+id/btn_annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_annuler"/>
 
-            <Button
-                android:id="@+id/btn_oui"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/valide_valider"
-                android:layout_column="1"/>
+    <TextView
+        android:id="@+id/label_motif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_gravity="center"
+        android:text="@string/label_motif"/>
 
-            <Button
-                android:id="@+id/btn_non"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/valide_annuler"
-                android:layout_column="2"/>
+    <EditText
+        android:id="@+id/saisie_motif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_motif"/>
 
-        </TableRow>
 
-        <TableRow
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/motif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_column="1"
-                android:text="@string/motif"/>
-        </TableRow>
-
-        <TableRow
-            android:gravity="center">
-            <EditText
-                android:id="@+id/saisie_motif"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-                android:layout_column="1"
-                android:hint="@string/saisie_motif"/>
-        </TableRow>
-    </TableLayout>-->
 </LinearLayout>

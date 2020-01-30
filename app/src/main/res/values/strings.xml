@@ -49,4 +49,21 @@
     <string name="label_inscription_handicape">INSCRIPTION RANDONNEUR HANDICAPE</string>
 
     <string name="btn_modifier_randonnee">Modifier cette randonnée</string>
+
+    <!-- asso_modify_event_activity -->
+    <string name="label_nom_rando">Randonnée 1</string>
+    <string name="label_date_rando">Date</string>
+    <string name="label_lieu">Lieu</string>
+    <string name="label_nb_participant_requis">Nombre de participant requis</string>
+    <string name="label_date_echeance">Echéance de réponse</string>
+    <string name="label_participation">Participation à la randonnée</string>
+    <string name="label_motif">Motif</string>
+
+    <string name="hint_date">Saisir la date ici</string>
+    <string name="hint_lieu">Saisir le lieu ici</string>
+    <string name="hint_nb_participant_min">Saisir le nombre de participant requis ici</string>
+    <string name="hint_date_echeance">Saisir la date échéance ici</string>
+    <string name="hint_motif">Saisir le motif ici</string>
+
+    <string name="btn_annuler">Annuler</string>
 </resources>
