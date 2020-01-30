@@ -19,7 +19,7 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         Button btnModifierRando = (Button) findViewById(R.id.btn_modifier);
 
         Intent intent = getIntent();
-        Bundle extra = intent.getExtras();
+        final Bundle extra = intent.getExtras();
 
         TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
         EditText editTextDate = (EditText) findViewById(R.id.date_randonnee);
@@ -46,6 +46,7 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AssoReadActiveEventActivity.this, AssoModifyEventActivity.class);
+                intent.putExtras(extra);
                 startActivity(intent);
             }
         });
