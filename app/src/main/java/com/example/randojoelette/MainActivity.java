@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         bundle.putString("nom", response.getString("nom"));
                                         bundle.putString("prenom", response.getString("prenom"));
+                                        bundle.putInt("idRandonneur", response.getInt("idRandonneur"));
                                         intent.putExtras(bundle);
                                         startActivity(intent);
                                     }

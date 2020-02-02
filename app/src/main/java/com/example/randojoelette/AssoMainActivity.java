@@ -56,8 +56,8 @@ public class AssoMainActivity extends AppCompatActivity {
                 try {
                     for(int i = 0; i < response.length(); i++) {
                         listeRandonneesActives.add(response.getJSONObject(i).getString("libelle"));
-                        afficherListeRandoActive();
                     }
+                    afficherListeRandoActive();
                 } catch (Exception e) {
                     label_identite.setText("Erreur lors du traitement de l'affichage des listes des randonnées actives");
                 }
