@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/Background"
+    >
+
 
     <TextView
         android:id="@+id/requete"
@@ -18,6 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:textStyle="bold"
+        android:textSize="30dp"
         android:text="@string/label_identifiant"/>
 
     <EditText
@@ -27,6 +32,7 @@
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_identifiant"/>
 
     <TextView
@@ -35,6 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:textStyle="bold"
+        android:textSize="30dp"
         android:hint="@string/label_mdp"/>
 
     <EditText
@@ -44,6 +52,7 @@
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_mdp"/>
 
     <Button
@@ -52,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:background="@drawable/buttonshape"
         android:text="@string/btn_connexion"/>
 
     <Button
@@ -60,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:text="@string/btn_inscription"/>
+        android:background="@drawable/buttonshape"
+        android:text="@string/btn_inscription" />
 
 </LinearLayout>
