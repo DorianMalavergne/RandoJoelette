@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AssoAddEventActivity"
+    android:background="@drawable/Background"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_bord_superieur"
+        android:textStyle="bold"
+        android:textSize="25dp"
         android:text="@string/nom_randonne"/>
 
     <TextView
@@ -20,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
         android:text="@string/date_randonne"/>
 
     <EditText
@@ -28,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/saisie_date"/>
 
     <TextView
@@ -35,6 +41,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
         android:text="@string/lieu"/>
 
     <EditText
@@ -43,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/saisie_adresse"/>
 
     <TextView
@@ -50,6 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
         android:text="@string/nb_participants"/>
 
     <EditText
@@ -58,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/nb_part"/>
 
     <TextView
@@ -65,6 +77,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
         android:text="@string/echeance"/>
 
     <EditText
@@ -73,13 +87,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:background="@drawable/edittext"
         android:hint="@string/saisie_echeance"/>
 
     <Button
         android:id="@+id/btn_valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_gravity="center"
+        android:background="@drawable/buttonshape"
         android:text="@string/btn_valider"/>
 
 

@@ -2,5 +2,5 @@
 <resources>
     <dimen name="marge_verticale_vue_principale">20dp</dimen>
     <dimen name="marge_horizontale_vue_principale">15dp</dimen>
-    <dimen name="marge_bord_superieur">40dp</dimen>
+    <dimen name="marge_bord_superieur">30dp</dimen>
 </resources>
