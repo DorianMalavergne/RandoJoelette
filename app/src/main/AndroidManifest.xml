@@ -26,6 +26,7 @@
         <activity android:name=".AssoAddEventActivity"/>
         <activity android:name=".AssoReadActiveEventActivity"/>
         <activity android:name=".AssoModifyEventActivity"/>
+        <activity android:name=".assomember_read_active_event_activity"/>
     </application>
 
 </manifest>
