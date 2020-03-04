@@ -107,7 +107,7 @@ public class AssomemberMainActivity extends AppCompatActivity {
         randoDispo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(AssomemberMainActivity.this, assomember_read_active_event_activity.class);
+                Intent intent = new Intent(AssomemberMainActivity.this, Assomember_valid_event_activity.class);
                 startActivity(intent);
             }
         });
@@ -121,5 +121,13 @@ public class AssomemberMainActivity extends AppCompatActivity {
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listeMesRandonnees);
 
         mesRando.setAdapter(arrayAdapter);
+
+        mesRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(AssomemberMainActivity.this, Assomember_read_active_event_activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
