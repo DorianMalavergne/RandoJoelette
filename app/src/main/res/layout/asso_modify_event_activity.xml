@@ -27,6 +27,7 @@
         android:id="@+id/saisie_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_date"/>
 
     <TextView
@@ -43,6 +44,7 @@
         android:id="@+id/saisie_lieu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_lieu"/>
 
     <TextView
@@ -59,6 +61,7 @@
         android:id="@+id/saisie_nb_participant_min"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_nb_participant_min"/>
 
     <TextView
@@ -75,6 +78,7 @@
         android:id="@+id/saisie_echeance_reponse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
         android:hint="@string/hint_date_echeance"/>
 
     <TextView
@@ -102,12 +106,14 @@
         android:id="@+id/btn_valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
         android:text="@string/btn_valider"/>
 
     <Button
         android:id="@+id/btn_annuler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
         android:text="@string/btn_annuler"/>
     </TableRow>
 
@@ -122,6 +128,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="16dp"
+            android:background="@drawable/edittext"
             android:hint="@string/hint_motif"/>
 
     </TableRow>

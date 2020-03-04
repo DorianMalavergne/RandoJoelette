@@ -104,6 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:background="@drawable/buttonshape"
         android:text="@string/btn_modifier_randonnee"/>
 
 </LinearLayout>
