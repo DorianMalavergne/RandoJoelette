@@ -26,11 +26,11 @@ public class Assomember_read_active_event_activity extends AppCompatActivity {
         EditText editTextParticipantMin = (EditText) findViewById(R.id.saisie_nombre_requis);
         final EditText editTextDateEcheance = (EditText) findViewById(R.id.saisie_date);
 
-        String libelle = extra.getString("libelle");
-        String date = extra.getString("date");
-        String lieu = extra.getString("lieu");
-        String participantRequis = extra.getString("participantRequis");
-        String dataEcheance = extra.getString("dataEcheance");
+        final String libelle = extra.getString("libelle");
+        final String date = extra.getString("date");
+        final String lieu = extra.getString("lieu");
+        final String participantRequis = extra.getString("participantRequis");
+        final String dataEcheance = extra.getString("dataEcheance");
 
         textViewNomRando.setText(libelle);
         editTextDate.setText(date);
@@ -41,8 +41,18 @@ public class Assomember_read_active_event_activity extends AppCompatActivity {
         btn_modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Assomember_read_active_event_activity.this, Assomember_modify_event_activity.class);
-                startActivity(intent);
+                Intent intentModify = new Intent(Assomember_read_active_event_activity.this, Assomember_modify_event_activity.class);
+                try {
+                    extra.putString("libelle", libelle);
+                    extra.putString("date", date);
+                    extra.putString("lieu", lieu);
+                    extra.putString("participantRequis", participantRequis);
+                    extra.putString("dataEcheance", dataEcheance);
+                    intentModify.putExtras(extra);
+                    startActivity(intentModify);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

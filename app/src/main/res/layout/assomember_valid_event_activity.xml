@@ -36,7 +36,8 @@
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:background="@drawable/edittext"
-        android:hint="@string/saisie_date"/>
+        android:hint="@string/saisie_date"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_lieu"
@@ -56,7 +57,8 @@
          android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
          android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:background="@drawable/edittext"
-         android:hint="@string/saisie_adresse"/>
+         android:hint="@string/saisie_adresse"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_nb_participant"
@@ -76,7 +78,8 @@
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:background="@drawable/edittext"
-        android:hint="@string/nb_part"/>
+        android:hint="@string/nb_part"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_echeance"
@@ -96,7 +99,8 @@
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
         android:background="@drawable/edittext"
-        android:hint="@string/saisie_echeance"/>
+        android:hint="@string/saisie_echeance"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/label_participe"

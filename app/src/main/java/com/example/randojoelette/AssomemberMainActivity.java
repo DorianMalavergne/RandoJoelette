@@ -98,12 +98,47 @@ public class AssomemberMainActivity extends AppCompatActivity {
 
         queue.add(mesRandoRequest);
 
+        randoDispo = (ListView) findViewById(R.id.list_rando_dispo);
+
+        randoDispo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String name = listeRandonneesDisponibles.get(position);
+                String url = "http://185.224.139.170:8080/getRandonnee?name=" + name;
+
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Intent intent = new Intent(AssomemberMainActivity.this, Assomember_valid_event_activity.class);
+                        try {
+                            bundle.putString("libelle", response.getString("libelle"));
+                            bundle.putString("date", response.getString("date"));
+                            bundle.putString("lieu", response.getString("lieu"));
+                            bundle.putString("participantRequis", response.getString("participantMin"));
+                            bundle.putString("participantAccepte", response.getString("participantInscrit"));
+                            bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+                queue.add(jsonObjectRequest);
+            }
+        });
+
         mesRando = (ListView) findViewById(R.id.list_mes_rando);
 
         mesRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                 final TextView test = findViewById(R.id.label_identite);
                 String name = listeMesRandonnees.get(position);
                 String url = "http://185.224.139.170:8080/getRandonnee?name=" + name;
 
@@ -144,7 +179,6 @@ public class AssomemberMainActivity extends AppCompatActivity {
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listeRandonneesDisponibles);
 
         randoDispo.setAdapter(arrayAdapter);
-
     }
 
     public void afficherListeMesRando() {
