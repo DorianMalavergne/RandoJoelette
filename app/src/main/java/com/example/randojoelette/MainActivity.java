@@ -55,15 +55,25 @@ public class MainActivity extends AppCompatActivity {
                                         Bundle bundle = new Bundle();
                                         Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
 
-                                        if(response.getString("statut").equals("asso")) {
-                                            intent = new Intent(MainActivity.this, AssoMainActivity.class);
-                                            startActivity(intent);
-                                        }
-
                                         bundle.putString("nom", response.getString("nom"));
                                         bundle.putString("prenom", response.getString("prenom"));
                                         bundle.putInt("idRandonneur", response.getInt("idRandonneur"));
                                         intent.putExtras(bundle);
+
+
+                                        if(response.getString("statut").equals("asso")) {
+                                            intent = new Intent(MainActivity.this, AssoMainActivity.class);
+                                            startActivity(intent);
+                                        } else if (response.getString("statut").equals("handi")) {
+                                            intent = new Intent(MainActivity.this, HandiassomemberMainActivity.class);
+
+                                            bundle.putString("nom", response.getString("nom"));
+                                            bundle.putString("prenom", response.getString("prenom"));
+                                            intent.putExtras(bundle);
+
+                                            startActivity(intent);
+                                        }
+
                                         startActivity(intent);
                                     }
                                 } catch (Exception e) {

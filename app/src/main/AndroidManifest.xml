@@ -29,6 +29,7 @@
         <activity android:name=".Assomember_read_active_event_activity"/>
         <activity android:name=".Assomember_valid_event_activity"/>
         <activity android:name=".Assomember_modify_event_activity"/>
+        <activity android:name=".HandiassomemberMainActivity"/>
     </application>
 
 </manifest>
