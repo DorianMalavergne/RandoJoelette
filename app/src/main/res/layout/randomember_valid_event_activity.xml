@@ -108,6 +108,7 @@
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_height="fill_parent">
 
         <TableRow
@@ -119,20 +120,18 @@
                 android:id="@+id/btn_oui"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_oui"
-                android:layout_column="1"/>
+                android:background="@drawable/bouttons2"
+                android:layout_marginRight="15dp"
+                android:text="@string/valide_oui"/>
 
             <Button
                 android:id="@+id/btn_non"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_non"
-                android:layout_column="2"/>
+                android:background="@drawable/bouttons2"
+                android:text="@string/valide_non"/>
 
         </TableRow>
-
     </TableLayout>
 
 </LinearLayout>

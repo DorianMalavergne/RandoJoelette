@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marge_verticale_vue_principale"
                 android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:inputType="textPassword"
                 android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
                 android:background="@drawable/edittext"
                 android:hint="@string/hint_mdp"/>

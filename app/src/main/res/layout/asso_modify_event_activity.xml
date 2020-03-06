@@ -92,45 +92,43 @@
         android:text="@string/label_participation"/>
 
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-    android:layout_height="match_parent">
-
-    <TableRow
-        android:id="@+id/row1"
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/btn_valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_valider"/>
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_height="fill_parent">
 
-    <Button
-        android:id="@+id/btn_annuler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_annuler"/>
-    </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
 
-    <TableRow
-        android:id="@+id/row2"
-        android:layout_width="fill_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/saisie_motif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:background="@drawable/edittext"
-            android:hint="@string/hint_motif"/>
+            <Button
+                android:id="@+id/btn_oui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bouttons2"
+                android:layout_marginRight="15dp"
+                android:text="@string/valide_oui"/>
 
-    </TableRow>
-</TableLayout>
+            <Button
+                android:id="@+id/btn_non"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bouttons2"
+                android:text="@string/valide_non"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/saisie_motif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"
+                android:hint="@string/saisie_motif"/>
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

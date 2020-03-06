@@ -109,6 +109,7 @@
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_height="fill_parent">
 
         <TableRow
@@ -120,40 +121,30 @@
                 android:id="@+id/btn_oui"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_oui"
-                android:layout_column="1"/>
+                android:background="@drawable/bouttons2"
+                android:layout_marginRight="15dp"
+                android:text="@string/valide_oui"/>
 
             <Button
                 android:id="@+id/btn_non"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:text="@string/valide_non"
-                android:layout_column="2"/>
+                android:background="@drawable/bouttons2"
+                android:text="@string/valide_non"/>
 
         </TableRow>
-
-        <TextView
-            android:id="@+id/motif"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/marge_bord_superieur"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:text="@string/motif"/>
-
-        <EditText
-            android:id="@+id/saisie_motif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-            android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-            android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-            android:background="@drawable/edittext"
-            android:hint="@string/saisie_motif"/>
-
+            android:gravity="center">
+            <EditText
+                android:id="@+id/saisie_motif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"
+                android:hint="@string/saisie_motif"/>
+        </TableRow>
     </TableLayout>
 
 
