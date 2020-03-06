@@ -15,14 +15,18 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AssomemberMainActivity extends AppCompatActivity {
+
+    private final Bundle bundle = new Bundle();
 
     private ListView randoDispo;
     private ListView mesRando;
@@ -44,11 +48,11 @@ public class AssomemberMainActivity extends AppCompatActivity {
         TextView label_identite = (TextView) findViewById(R.id.label_identite);
         label_identite.setText("Bienvenue " + prenom + " " + nom);
 
-        final RequestQueue queue = Volley.newRequestQueue(this);
-
         String url = "http://185.224.139.170:8080/afficheRandonneeActive";
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+        final RequestQueue queue = Volley.newRequestQueue(this);
+
+        final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -93,6 +97,43 @@ public class AssomemberMainActivity extends AppCompatActivity {
         });
 
         queue.add(mesRandoRequest);
+
+        mesRando = (ListView) findViewById(R.id.list_mes_rando);
+
+        mesRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                 final TextView test = findViewById(R.id.label_identite);
+                String name = listeMesRandonnees.get(position);
+                String url = "http://185.224.139.170:8080/getRandonnee?name=" + name;
+
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Intent intent = new Intent(AssomemberMainActivity.this, Assomember_read_active_event_activity.class);
+                        try {
+                            bundle.putString("libelle", response.getString("libelle"));
+                            bundle.putString("date", response.getString("date"));
+                            bundle.putString("lieu", response.getString("lieu"));
+                            bundle.putString("participantRequis", response.getString("participantMin"));
+                            bundle.putString("participantAccepte", response.getString("participantInscrit"));
+                            bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+                queue.add(jsonObjectRequest);
+            }
+        });
     }
 
     public void afficherListeRandoDispo() {
@@ -104,13 +145,6 @@ public class AssomemberMainActivity extends AppCompatActivity {
 
         randoDispo.setAdapter(arrayAdapter);
 
-        randoDispo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(AssomemberMainActivity.this, Assomember_valid_event_activity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     public void afficherListeMesRando() {
@@ -121,13 +155,5 @@ public class AssomemberMainActivity extends AppCompatActivity {
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listeMesRandonnees);
 
         mesRando.setAdapter(arrayAdapter);
-
-        mesRando.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(AssomemberMainActivity.this, Assomember_read_active_event_activity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
