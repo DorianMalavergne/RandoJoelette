@@ -107,10 +107,10 @@
         android:textSize="16dp"
         android:text="@string/annule_participation"/>
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:layout_width="fill_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale">
 
         <TableRow
             android:layout_width="fill_parent"
@@ -121,31 +121,36 @@
                 android:id="@+id/btn_oui"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bouttons2"
                 android:layout_marginRight="15dp"
-                android:text="@string/valide_oui"/>
+                android:background="@drawable/bouttons2"
+                android:text="@string/valide_oui" />
 
             <Button
                 android:id="@+id/btn_non"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bouttons2"
-                android:text="@string/valide_non"/>
+                android:text="@string/valide_non" />
 
         </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+        android:layout_height="fill_parent">
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="@dimen/marge_verticale_vue_principale"
             android:gravity="center">
+
             <EditText
                 android:id="@+id/saisie_motif"
-                android:layout_width="match_parent"
+                android:layout_width="368dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext"
-                android:hint="@string/saisie_motif"/>
+                android:hint="@string/saisie_motif" />
         </TableRow>
     </TableLayout>
-
-
 </LinearLayout>
