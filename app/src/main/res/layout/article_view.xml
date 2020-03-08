@@ -9,6 +9,7 @@
         android:id="@+id/label_nom_asso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="16dp"
@@ -18,6 +19,7 @@
         android:id="@+id/saisie_nom_asso"
         android:layout_width="match_parent"
         android:background="@drawable/edittext"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -25,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/label_prenom_randonneur"/>
@@ -32,6 +35,7 @@
     <EditText
         android:id="@+id/saisie_nom_president"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:layout_height="wrap_content"/>
 
@@ -40,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/label_adresse_randonneur"/>
@@ -47,6 +52,7 @@
     <EditText
         android:id="@+id/saisie_adresse_asso"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:layout_height="wrap_content"/>
 
@@ -54,6 +60,7 @@
         android:id="@+id/label_tel_asso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="16dp"
@@ -63,6 +70,7 @@
         android:id="@+id/saisie_tel_asso"
         android:layout_width="match_parent"
         android:background="@drawable/edittext"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_height="wrap_content"/>
 
     <Button
