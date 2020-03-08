@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/date_randonne"/>
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:hint="@string/saisie_date"/>
 
@@ -41,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/lieu"/>
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:hint="@string/saisie_adresse"/>
 
@@ -59,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/nb_participants"/>
@@ -69,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:hint="@string/nb_part"/>
 
@@ -77,6 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:textStyle="bold"
         android:textSize="16dp"
         android:text="@string/echeance"/>
@@ -87,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
         android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:background="@drawable/edittext"
         android:hint="@string/saisie_echeance"/>
 
