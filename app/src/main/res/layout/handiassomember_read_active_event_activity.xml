@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".handiassomember_valid_event_activity"
+    tools:context=".handiassomember_read_active_event_activity"
     android:background="@drawable/background"
     android:orientation="vertical">
 
@@ -98,42 +98,13 @@
         android:background="@drawable/edittext"
         android:hint="@string/saisie_echeance"/>
 
-    <TextView
-        android:id="@+id/label_participe"
+    <Button
+        android:id="@+id/btn_modifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/btn_modifier_randonnee"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/participation"/>
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="fill_parent">
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btn_oui"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bouttons2"
-                android:layout_marginRight="15dp"
-                android:text="@string/valide_oui"/>
-
-            <Button
-                android:id="@+id/btn_non"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bouttons2"
-                android:text="@string/valide_non"/>
-
-        </TableRow>
-    </TableLayout>
+        android:background="@drawable/buttonshape"/>
 
 </LinearLayout>

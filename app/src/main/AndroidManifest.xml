@@ -30,6 +30,9 @@
         <activity android:name=".Assomember_valid_event_activity"/>
         <activity android:name=".Assomember_modify_event_activity"/>
         <activity android:name=".HandiassomemberMainActivity"/>
+        <activity android:name=".handiassomember_valid_event_activity"/>
+        <activity android:name=".handiassomember_read_active_event_activity"/>
+        <activity android:name=".Handiassomember_modify_event_activity"/>
     </application>
 
 </manifest>
