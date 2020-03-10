@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                                         bundle.putInt("idRandonneur", response.getInt("idRandonneur"));
                                         intent.putExtras(bundle);
 
-
                                         if(response.getString("statut").equals("asso")) {
                                             intent = new Intent(MainActivity.this, AssoMainActivity.class);
                                             startActivity(intent);

@@ -66,4 +66,5 @@
     <string name="hint_motif">Saisir le motif ici</string>
 
     <string name="btn_annuler">Annuler</string>
+    <string name="label_base_inscription">INSCRIPTION RANDONNEUR </string>
 </resources>

@@ -17,19 +17,31 @@ public class AccountActivity extends AppCompatActivity {
 
         Spinner spinnerStatut = (Spinner) findViewById(R.id.spinner_statut);
 
+        spinnerStatut.setSelection(0);
+
         spinnerStatut.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent;
+                Intent intent = new Intent(AccountActivity.this, AccountAssomemberActivity.class);
+                Bundle bundle = new Bundle();
                 switch(position) {
                     case 1:
                         intent = new Intent(AccountActivity.this, AccountAssoActivity.class);
                         startActivity(intent);
                         break;
-                    case 2: /* Falls throught */
-                    case 3: /* Falls throught */
+                    case 2 :
+                        bundle.putString("inscription", "MEMBRE");
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        bundle.putString("inscription", "EXTERNE");
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        break;
                     case 4:
-                        intent = new Intent(AccountActivity.this, AccountAssomemberActivity.class);
+                        bundle.putString("inscription", "HANDICAPE");
+                        intent.putExtras(bundle);
                         startActivity(intent);
                         break;
                 }

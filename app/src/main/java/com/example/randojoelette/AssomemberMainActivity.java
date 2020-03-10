@@ -43,7 +43,7 @@ public class AssomemberMainActivity extends AppCompatActivity {
 
         String nom = extra.getString("nom");
         String prenom = extra.getString("prenom");
-        int idRandonneur = extra.getInt("idRandonneur");
+        final int idRandonneur = extra.getInt("idRandonneur");
 
         TextView label_identite = (TextView) findViewById(R.id.label_identite);
         label_identite.setText("Bienvenue " + prenom + " " + nom);
@@ -118,6 +118,8 @@ public class AssomemberMainActivity extends AppCompatActivity {
                             bundle.putString("participantRequis", response.getString("participantMin"));
                             bundle.putString("participantAccepte", response.getString("participantInscrit"));
                             bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            bundle.putInt("idRandonneur", idRandonneur);
+                            bundle.putInt("idRandonnee", response.getInt("idRando"));
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } catch (Exception e) {
