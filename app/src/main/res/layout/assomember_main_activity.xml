@@ -9,6 +9,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/label_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
         android:id="@+id/label_identite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,5 +47,11 @@
         android:id="@+id/list_mes_rando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/label_aucune_rando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

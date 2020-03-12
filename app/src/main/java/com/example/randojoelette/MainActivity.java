@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView requete = (TextView) findViewById(R.id.requete);
 
         final Button btn_connexion = (Button) findViewById(R.id.btn_connexion);
-        Button btn_inscription = (Button) findViewById(R.id.btn_inscription);
+        final Button btn_inscription = (Button) findViewById(R.id.btn_inscription);
         final EditText editText_identifiant = (EditText) findViewById(R.id.saisie_identifiant);
         final EditText editText_mdp = (EditText) findViewById(R.id.saisie_mdp);
 
@@ -38,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
         btn_connexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                String id = editText_identifiant.getText().toString();
-                String mdp = editText_mdp.getText().toString();
+                btn_connexion.setEnabled(false);
+                final String id = editText_identifiant.getText().toString().trim();
+                final String mdp = editText_mdp.getText().toString().trim();
 
                 String url = "http://185.224.139.170:8080/connexionUtilisateur?login=" + id + "&password=" + mdp;
 
@@ -47,11 +48,18 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
+                                btn_connexion.setEnabled(true);
                                 try {
-                                    if (response.getInt("idRandonneur") == 0) {
+                                    if (!id.contains("@")) {
+                                        requete.setText("L'adresse email saisie n'est pas valide");
+                                        requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
+                                    } else if(mdp.length() < 3) {
+                                        requete.setText("Le mot de passe doit contenir au moins trois caractères");
+                                        requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
+                                    } else if(response.getInt("idRandonneur") == 0) {
                                         requete.setText("Identifiant et/ou mot de passe incorrect");
+                                        requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
                                     } else {
-                                        requete.setText(response.toString());
                                         Bundle bundle = new Bundle();
                                         Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);
 
@@ -62,8 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
                                         if(response.getString("statut").equals("asso")) {
                                             intent = new Intent(MainActivity.this, AssoMainActivity.class);
+                                            bundle.putInt("idRandonneur", response.getInt("idRandonneur"));
+                                            intent.putExtras(bundle);
                                             startActivity(intent);
-                                        } else if (response.getString("statut").equals("handi")) {
+                                        } else if (response.getString("statut").equals("HANDICAPE")) {
                                             intent = new Intent(MainActivity.this, HandiassomemberMainActivity.class);
 
                                             bundle.putString("nom", response.getString("nom"));
@@ -83,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        requete.setText(error.getMessage());
+                        btn_connexion.setEnabled(true);
+                        requete.setText("Merci d'activer votre connexion internet");
+                        requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
                     }
                 });
 
@@ -94,8 +106,10 @@ public class MainActivity extends AppCompatActivity {
         btn_inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_inscription.setEnabled(false);
                 Intent intent = new Intent(MainActivity.this, AccountActivity.class);
                 startActivity(intent);
+                btn_inscription.setEnabled(true);
             }
         });
     }

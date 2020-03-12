@@ -30,8 +30,8 @@ public class handiassomember_valid_event_activity extends AppCompatActivity {
 
         final RequestQueue queue = Volley.newRequestQueue(this);
 
-        Button btnOui = findViewById(R.id.btn_oui);
-        Button btnNon = findViewById(R.id.btn_non);
+        final Button btnOui = findViewById(R.id.btn_oui);
+        final Button btnNon = findViewById(R.id.btn_non);
 
         TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
         EditText editTextDate = (EditText) findViewById(R.id.saisie_date_rando);
@@ -56,18 +56,21 @@ public class handiassomember_valid_event_activity extends AppCompatActivity {
         btnOui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOui.setEnabled(false);
                 String url = "http://185.224.139.170:8080/valideParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        btnOui.setEnabled(true);
                         Intent intent1 = new Intent(handiassomember_valid_event_activity.this, HandiassomemberMainActivity.class);
                         startActivity(intent1);
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        btnOui.setEnabled(true);
                         error.printStackTrace();
                     }
                 });
@@ -78,7 +81,9 @@ public class handiassomember_valid_event_activity extends AppCompatActivity {
         btnNon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnNon.setEnabled(false);
                 Intent intent = new Intent(handiassomember_valid_event_activity.this, HandiassomemberMainActivity.class);
+                btnNon.setEnabled(true);
                 startActivity(intent);
             }
         });

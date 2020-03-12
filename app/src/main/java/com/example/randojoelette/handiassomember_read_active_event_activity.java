@@ -16,7 +16,7 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
         super.onCreate(savedInstanceState);
         setContentView(R.layout.handiassomember_read_active_event_activity);
 
-        Button btn_modifier = findViewById(R.id.btn_modifier);
+        final Button btn_modifier = findViewById(R.id.btn_modifier);
 
         Intent intent = getIntent();
         final Bundle extra = intent.getExtras();
@@ -32,6 +32,8 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
         final String lieu = extra.getString("lieu");
         final String participantRequis = extra.getString("participantRequis");
         final String dataEcheance = extra.getString("dataEcheance");
+        final int idRandonneur = extra.getInt("idRandonneur");
+        final int idRandonnee = extra.getInt("idRandonnee");
 
         textViewNomRando.setText(libelle);
         editTextDate.setText(date);
@@ -42,6 +44,7 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
         btn_modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_modifier.setEnabled(false);
                 Intent intentModify = new Intent(handiassomember_read_active_event_activity.this,Handiassomember_modify_event_activity.class);
                 try {
                     extra.putString("libelle", libelle);
@@ -49,9 +52,13 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
                     extra.putString("lieu", lieu);
                     extra.putString("participantRequis", participantRequis);
                     extra.putString("dataEcheance", dataEcheance);
+                    extra.putInt("idRandonneur", idRandonneur);
+                    extra.putInt("idRandonnee", idRandonnee);
                     intentModify.putExtras(extra);
+                    btn_modifier.setEnabled(true);
                     startActivity(intentModify);
                 } catch (Exception e) {
+                    btn_modifier.setEnabled(true);
                     e.printStackTrace();
                 }
             }

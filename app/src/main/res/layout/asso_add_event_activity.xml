@@ -8,124 +8,132 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/label_nom_rando"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:text="@string/nom_randonne"/>
-
-    <TextView
-        android:id="@+id/label_libelle_randonnee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="Nom de la randonnée"/>
-
-    <EditText
-        android:id="@+id/saisie_libelle_randonnee"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:hint="saisir le nom de la randonnée"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/label_date_randonne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/date_randonne"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/label_nom_rando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_bord_superieur"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:text="@string/nom_randonne"/>
 
-    <EditText
-        android:id="@+id/saisie_date_rando"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:hint="@string/saisie_date"/>
+            <TextView
+                android:id="@+id/label_libelle_randonnee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="Nom de la randonnée"/>
 
-    <TextView
-        android:id="@+id/label_lieu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/lieu"/>
+            <EditText
+                android:id="@+id/saisie_libelle_randonnee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:hint="saisir le nom de la randonnée"/>
 
-    <EditText
-        android:id="@+id/saisie_postale_adresse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:hint="@string/saisie_adresse"/>
+            <TextView
+                android:id="@+id/label_date_randonne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/date_randonne"/>
 
-    <TextView
-        android:id="@+id/label_nb_participant_min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="Nombre de participants minimum"/>
+            <EditText
+                android:id="@+id/saisie_date_rando"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:hint="@string/saisie_date"/>
 
-    <EditText
-        android:id="@+id/saisie_nombre_min"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:hint="Saisir le nombre de participants minimium"/>
+            <TextView
+                android:id="@+id/label_lieu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/lieu"/>
 
-    <TextView
-        android:id="@+id/label_echeance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/echeance"/>
+            <EditText
+                android:id="@+id/saisie_postale_adresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:hint="@string/saisie_adresse"/>
 
-    <EditText
-        android:id="@+id/saisie_date_echeance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:hint="@string/saisie_echeance"/>
+            <TextView
+                android:id="@+id/label_nb_participant_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="Nombre de participants minimum"/>
 
-    <Button
-        android:id="@+id/btn_valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_gravity="center"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_valider"/>
+            <EditText
+                android:id="@+id/saisie_nombre_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:hint="Saisir le nombre de participants minimium"/>
 
+            <TextView
+                android:id="@+id/label_echeance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/echeance"/>
 
+            <EditText
+                android:id="@+id/saisie_date_echeance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:hint="@string/saisie_echeance"/>
+
+            <Button
+                android:id="@+id/btn_valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonshape"
+                android:text="@string/btn_valider"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

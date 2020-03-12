@@ -38,13 +38,18 @@ public class AssoMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_main_activity);
 
-        Button btn_creerRando = (Button) findViewById(R.id.btn_creer_rando);
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        final int idRandonneur = extra.getInt("idRandonneur");
+
+        final Button btn_creerRando = (Button) findViewById(R.id.btn_creer_rando);
         listeRando = (ListView) findViewById(R.id.list_rando_active);
 
         final RequestQueue queue = Volley.newRequestQueue(this);
 
         final TextView label_identite = (TextView) findViewById(R.id.label_identite);
         label_identite.setText("Bienvenue Admnistrateur");
+
 
 
         String url = "http://185.224.139.170:8080/afficheRandonneeActive";
@@ -74,7 +79,9 @@ public class AssoMainActivity extends AppCompatActivity {
         btn_creerRando.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_creerRando.setEnabled(false);
                 Intent intent =  new Intent(AssoMainActivity.this, AssoAddEventActivity.class);
+                btn_creerRando.setEnabled(true);
                 startActivity(intent);
             }
         });
@@ -99,6 +106,8 @@ public class AssoMainActivity extends AppCompatActivity {
                             bundle.putString("participantRequis", response.getString("participantMin"));
                             bundle.putString("participantAccepte", response.getString("participantInscrit"));
                             bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            bundle.putInt("idRandonneur", idRandonneur);
+                            bundle.putInt("idRandonnee", response.getInt("idRando"));
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } catch (Exception e) {

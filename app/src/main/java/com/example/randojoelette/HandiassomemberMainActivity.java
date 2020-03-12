@@ -161,6 +161,8 @@ public class HandiassomemberMainActivity extends AppCompatActivity {
                             bundle.putString("participantRequis", response.getString("participantMin"));
                             bundle.putString("participantAccepte", response.getString("participantInscrit"));
                             bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            bundle.putInt("idRandonneur", idRandonneur);
+                            bundle.putInt("idRandonnee", response.getInt("idRando"));
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } catch (Exception e) {

@@ -27,7 +27,7 @@ public class AssoAddEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_add_event_activity);
 
-        Button boutton = (Button) findViewById(R.id.btn_valider);
+        final Button boutton = (Button) findViewById(R.id.btn_valider);
 
         final EditText libelle = (EditText) findViewById (R.id.saisie_libelle_randonnee);
         final EditText date = (EditText) findViewById (R.id.saisie_date_rando);
@@ -40,6 +40,7 @@ public class AssoAddEventActivity extends AppCompatActivity {
         boutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boutton.setEnabled(false);
                 String nomRando = libelle.getText().toString();
                 String dateRando = date.getText().toString();
                 String lieuRando = lieu.getText().toString();
@@ -53,12 +54,14 @@ public class AssoAddEventActivity extends AppCompatActivity {
                         Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        boutton.setEnabled(true);
                         Intent intent = new Intent(AssoAddEventActivity.this, AssoMainActivity.class);
                         startActivity(intent);
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        boutton.setEnabled(true);
                         error.printStackTrace();
                     }
                 });

@@ -117,6 +117,7 @@
         android:id="@+id/saisie_motdp"
         android:layout_width="match_parent"
         android:background="@drawable/edittext"
+        android:inputType="textPassword"
         android:layout_marginTop="@dimen/marge_verticale_vue_principale"
         android:layout_height="wrap_content"/>
 

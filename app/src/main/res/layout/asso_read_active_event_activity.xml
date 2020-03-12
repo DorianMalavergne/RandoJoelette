@@ -8,118 +8,127 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/label_nom_rando"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_bord_superieur"
-        android:textStyle="bold"
-        android:textSize="23dp"
-        android:text="@string/nom_randonne"/>
-
-    <TextView
-        android:id="@+id/label_date_randonnee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/date_randonne"/>
-
-    <EditText
-        android:id="@+id/date_randonnee"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:background="@drawable/edittext"
-        android:focusable="false"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/label_lieu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/lieu"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/lieu_randonnee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:background="@drawable/edittext"
-        android:focusable="false"/>
+            <TextView
+                android:id="@+id/label_nom_rando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_bord_superieur"
+                android:textStyle="bold"
+                android:textSize="23dp"
+                android:text="@string/nom_randonne"/>
 
-    <TextView
-        android:id="@+id/label_nb_participant_requis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/nb_participants_requis"/>
+            <TextView
+                android:id="@+id/label_date_randonnee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/date_randonne"/>
 
-    <EditText
-        android:id="@+id/nombre_requis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:background="@drawable/edittext"
-        android:focusable="false"/>
+            <EditText
+                android:id="@+id/date_randonnee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:background="@drawable/edittext"
+                android:focusable="false"/>
 
-    <TextView
-        android:id="@+id/label_nb_participant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/nb_participants_accepte"/>
+            <TextView
+                android:id="@+id/label_lieu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/lieu"/>
 
-    <EditText
-        android:id="@+id/nombre_accepte"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:background="@drawable/edittext"
-        android:focusable="false"/>
+            <EditText
+                android:id="@+id/lieu_randonnee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:background="@drawable/edittext"
+                android:focusable="false"/>
 
-    <TextView
-        android:id="@+id/label_echeance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/echeance"/>
+            <TextView
+                android:id="@+id/label_nb_participant_requis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/nb_participants_requis"/>
 
-    <EditText
-        android:id="@+id/date_echeance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-        android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-        android:background="@drawable/edittext"
-        android:focusable="false"/>
-    
-    <Button
-        android:id="@+id/btn_modifier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_modifier_randonnee" />
+            <EditText
+                android:id="@+id/nombre_requis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:background="@drawable/edittext"
+                android:focusable="false"/>
 
+            <TextView
+                android:id="@+id/label_nb_participant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/nb_participants_accepte"/>
 
+            <EditText
+                android:id="@+id/nombre_accepte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:background="@drawable/edittext"
+                android:focusable="false"/>
+
+            <TextView
+                android:id="@+id/label_echeance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/echeance"/>
+
+            <EditText
+                android:id="@+id/date_echeance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
+                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
+                android:background="@drawable/edittext"
+                android:focusable="false"/>
+
+            <Button
+                android:id="@+id/btn_modifier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/buttonshape"
+                android:text="@string/btn_modifier_randonnee" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

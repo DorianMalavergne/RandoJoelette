@@ -62,7 +62,7 @@ public class AssomemberMainActivity extends AppCompatActivity {
                     }
                     afficherListeRandoDispo();
                 } catch (Exception e) {
-                    //TODO erreur de traitement des randonnees disponibles
+                    e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
@@ -80,19 +80,24 @@ public class AssomemberMainActivity extends AppCompatActivity {
                 Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                try {
-                    for(int i = 0; i < response.length(); i++) {
-                        listeMesRandonnees.add(response.getJSONObject(i).getString("libelle"));
+                if(response.length() == 0) {
+                    TextView pasDeRando = findViewById(R.id.label_aucune_rando);
+                    pasDeRando.setText("Vous n'avez aucunes randonnées en prévision");
+                } else {
+                    try {
+                        for (int i = 0; i < response.length(); i++) {
+                            listeMesRandonnees.add(response.getJSONObject(i).getString("libelle"));
+                        }
+                        afficherListeMesRando();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    afficherListeMesRando();
-                } catch (Exception e) {
-                    //TODO erreur de traitement de mes randonnees
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // TODO bous n'avez aucune randonnees pour le moment
+                error.printStackTrace();
             }
         });
 
@@ -156,6 +161,8 @@ public class AssomemberMainActivity extends AppCompatActivity {
                             bundle.putString("participantRequis", response.getString("participantMin"));
                             bundle.putString("participantAccepte", response.getString("participantInscrit"));
                             bundle.putString("dataEcheance", response.getString("dateEcheance"));
+                            bundle.putInt("idRandonneur", idRandonneur);
+                            bundle.putInt("idRandonnee", response.getInt("idRando"));
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } catch (Exception e) {

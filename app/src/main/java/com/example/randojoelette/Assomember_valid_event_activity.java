@@ -35,8 +35,8 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         EditText editTextLieu = (EditText) findViewById(R.id.saisie_postale_adresse);
         EditText editTextParticipantMin = (EditText) findViewById(R.id.saisie_nombre);
         final EditText editTextDateEcheance = (EditText) findViewById(R.id.saisie_date);
-        Button btnOui = findViewById(R.id.btn_oui);
-        Button btnNon = findViewById(R.id.btn_non);
+        final Button btnOui = findViewById(R.id.btn_oui);
+        final Button btnNon = findViewById(R.id.btn_non);
 
         String libelle = extra.getString("libelle");
         String date = extra.getString("date");
@@ -56,18 +56,21 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         btnOui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOui.setEnabled(false);
                 String url = "http://185.224.139.170:8080/valideParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        btnOui.setEnabled(true);
                         Intent intent1 = new Intent(Assomember_valid_event_activity.this, AssomemberMainActivity.class);
                         startActivity(intent1);
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        btnOui.setEnabled(true);
                         error.printStackTrace();
                     }
                 });
@@ -78,7 +81,9 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         btnNon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnNon.setEnabled(false);
                 Intent intent = new Intent(Assomember_valid_event_activity.this, AssomemberMainActivity.class);
+                btnNon.setEnabled(true);
                 startActivity(intent);
             }
         });

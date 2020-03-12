@@ -54,8 +54,8 @@ public class AccountAssomemberActivity extends AppCompatActivity {
                 String prenomRandonneur = prenom.getText().toString();
                 String adresseRandonneur = adresse.getText().toString();
                 String telRandonneur = tel.getText().toString();
-                String loginRandonneur = login.getText().toString();
-                String mdpRandonneur = mdp.getText().toString();
+                String loginRandonneur = login.getText().toString().trim();
+                String mdpRandonneur = mdp.getText().toString().trim();
 
                 String url = "http://185.224.139.170:8080/inscriptionRandonneur?login=" + loginRandonneur + "&password=" + mdpRandonneur + "&nom=" + nomRandoneur
                             + "&prenom=" + prenomRandonneur + "&add=" + adresseRandonneur + "&tel=" + telRandonneur + "&stat=" + statut;
