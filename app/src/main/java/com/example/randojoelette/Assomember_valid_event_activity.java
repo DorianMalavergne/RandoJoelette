@@ -52,7 +52,6 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         editTextParticipantMin.setText(participantRequis);
         editTextDateEcheance.setText(dataEcheance);
 
-
         btnOui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

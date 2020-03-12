@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,15 +51,19 @@ public class MainActivity extends AppCompatActivity {
                             public void onResponse(JSONObject response) {
                                 btn_connexion.setEnabled(true);
                                 try {
-                                    if (!id.contains("@")) {
+                                    if (!Patterns.EMAIL_ADDRESS.matcher(id).matches()) {
                                         requete.setText("L'adresse email saisie n'est pas valide");
                                         requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
+                                        editText_identifiant.setText("");
                                     } else if(mdp.length() < 3) {
                                         requete.setText("Le mot de passe doit contenir au moins trois caractères");
                                         requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
+                                        editText_mdp.setText("");
                                     } else if(response.getInt("idRandonneur") == 0) {
                                         requete.setText("Identifiant et/ou mot de passe incorrect");
                                         requete.setBackgroundColor(getResources().getColor(R.color.colorErreur));
+                                        editText_identifiant.setText("");
+                                        editText_mdp.setText("");
                                     } else {
                                         Bundle bundle = new Bundle();
                                         Intent intent = new Intent(MainActivity.this, AssomemberMainActivity.class);

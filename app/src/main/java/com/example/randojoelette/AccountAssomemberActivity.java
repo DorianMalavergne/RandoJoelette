@@ -2,6 +2,7 @@ package com.example.randojoelette;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,6 +20,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
+
+import java.util.regex.Pattern;
 
 public class AccountAssomemberActivity extends AppCompatActivity {
 
@@ -57,24 +60,37 @@ public class AccountAssomemberActivity extends AppCompatActivity {
                 String loginRandonneur = login.getText().toString().trim();
                 String mdpRandonneur = mdp.getText().toString().trim();
 
-                String url = "http://185.224.139.170:8080/inscriptionRandonneur?login=" + loginRandonneur + "&password=" + mdpRandonneur + "&nom=" + nomRandoneur
+                if(!Patterns.PHONE.matcher(telRandonneur).matches()) {
+                    tel.setText("");
+                    TextView message = findViewById(R.id.label_message);
+                    message.setText("Le numéro de téléphone n'est pas valide");
+                } else if(!Patterns.EMAIL_ADDRESS.matcher(loginRandonneur).matches()) {
+                    TextView message = findViewById(R.id.label_message);
+                    message.setText("L'adresse email saisie n'est pas valide");
+                    login.setText("");
+                } else if (mdpRandonneur.length() < 3) {
+                    TextView message = findViewById(R.id.label_message);
+                    message.setText("Le mot de passe doit contenir au moins 3 caractères");
+                    mdp.setText("");
+                } else {
+                    String url = "http://185.224.139.170:8080/inscriptionRandonneur?login=" + loginRandonneur + "&password=" + mdpRandonneur + "&nom=" + nomRandoneur
                             + "&prenom=" + prenomRandonneur + "&add=" + adresseRandonneur + "&tel=" + telRandonneur + "&stat=" + statut;
 
-                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Intent intent = new Intent(AccountAssomemberActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
-                queue.add(jsonObjectRequest);
-
+                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                            Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Intent intent = new Intent(AccountAssomemberActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            error.printStackTrace();
+                        }
+                    });
+                    queue.add(jsonObjectRequest);
+                }
             }
         });
 
