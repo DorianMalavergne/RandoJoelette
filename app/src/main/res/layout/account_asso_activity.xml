@@ -8,90 +8,100 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/label_inscription_membre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="23dp"
-        android:text="@string/label_inscription_association" />
-
-    <TextView
-        android:id="@+id/label_nom_asso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/label_nom_asso"/>
-
-    <EditText
-        android:id="@+id/saisie_nom_asso"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edittext"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/label_nom_president"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/label_nom_president"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/saisie_nom_president"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edittext"/>
+            <TextView
+                android:id="@+id/label_inscription_membre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="23dp"
+                android:text="@string/label_inscription_association" />
 
-    <TextView
-        android:id="@+id/label_adresse_asso"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/label_adresse_association"/>
+            <TextView
+                android:id="@+id/label_nom_asso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/label_nom_asso"/>
 
-    <EditText
-        android:id="@+id/saisie_adresse_asso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"/>
+            <EditText
+                android:id="@+id/saisie_nom_asso"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"/>
 
-    <TextView
-        android:id="@+id/label_tel_asso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/label_adresse_association"/>
+            <TextView
+                android:id="@+id/label_nom_president"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/label_nom_president"/>
 
-    <EditText
-        android:id="@+id/saisie_tel_asso"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edittext"/>
+            <EditText
+                android:id="@+id/saisie_nom_president"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"/>
 
-    <Button
-        android:id="@+id/btn_valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_valider"/>
+            <TextView
+                android:id="@+id/label_adresse_asso"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/label_adresse_association"/>
 
+            <EditText
+                android:id="@+id/saisie_adresse_asso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"/>
+
+            <TextView
+                android:id="@+id/label_tel_asso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/label_adresse_association"/>
+
+            <EditText
+                android:id="@+id/saisie_tel_asso"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"/>
+
+            <Button
+                android:id="@+id/btn_valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/buttonshape"
+                android:text="@string/btn_valider"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

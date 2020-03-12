@@ -8,126 +8,136 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/label_inscription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="@string/label_inscription_membre" />
-
-
-    <TextView
-        android:id="@+id/label_prenom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:text="@string/label_nom_randonneur"/>
-
-    <EditText
-        android:id="@+id/saisie_nomrandonneur"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/label_nom_president"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textSize="16dp"
-        android:text="@string/label_prenom_randonneur"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/saisie_prenom"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/label_inscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="@string/label_inscription_membre" />
 
-    <TextView
-        android:id="@+id/label_adresse_asso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:layout_gravity="center"
-        android:text="@string/label_adresse_randonneur"/>
 
-    <EditText
-        android:id="@+id/saisie_adresse"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/edittext"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/label_prenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="@string/label_nom_randonneur"/>
 
-    <TextView
-        android:id="@+id/label_tel_asso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textSize="16dp"
-        android:text="@string/label_tel_randonneur"/>
+            <EditText
+                android:id="@+id/saisie_nomrandonneur"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/saisie_tel"
-        android:layout_width="match_parent"
-        android:background="@drawable/edittext"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/label_nom_president"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textSize="16dp"
+                android:text="@string/label_prenom_randonneur"/>
 
-    <TextView
-        android:id="@+id/label_loginrando"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textSize="16dp"
-        android:text="Login"/>
+            <EditText
+                android:id="@+id/saisie_prenom"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/saisie_log"
-        android:layout_width="match_parent"
-        android:background="@drawable/edittext"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/label_adresse_asso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_gravity="center"
+                android:text="@string/label_adresse_randonneur"/>
 
-    <TextView
-        android:id="@+id/label_mdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:textSize="16dp"
-        android:text="Mot de passe"/>
+            <EditText
+                android:id="@+id/saisie_adresse"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/edittext"
+                android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/saisie_motdp"
-        android:layout_width="match_parent"
-        android:background="@drawable/edittext"
-        android:inputType="textPassword"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/label_tel_asso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textSize="16dp"
+                android:text="@string/label_tel_randonneur"/>
 
-    <Button
-        android:id="@+id/btn_valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-        android:background="@drawable/buttonshape"
-        android:text="@string/btn_valider"/>
+            <EditText
+                android:id="@+id/saisie_tel"
+                android:layout_width="match_parent"
+                android:background="@drawable/edittext"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"/>
 
+            <TextView
+                android:id="@+id/label_loginrando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textSize="16dp"
+                android:text="Login"/>
+
+            <EditText
+                android:id="@+id/saisie_log"
+                android:layout_width="match_parent"
+                android:background="@drawable/edittext"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/label_mdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:textSize="16dp"
+                android:text="Mot de passe"/>
+
+            <EditText
+                android:id="@+id/saisie_motdp"
+                android:layout_width="match_parent"
+                android:background="@drawable/edittext"
+                android:inputType="textPassword"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                android:background="@drawable/buttonshape"
+                android:text="@string/btn_valider"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
