@@ -54,7 +54,7 @@
     <string name="label_nom_rando">Randonnée 1</string>
     <string name="label_date_rando">Date</string>
     <string name="label_lieu">Lieu</string>
-    <string name="label_nb_participant_requis">Nombre de participant requis</string>
+    <string name="label_nb_participant">Nombre de participant</string>
     <string name="label_date_echeance">Echéance de réponse</string>
     <string name="label_participation">Participation à la randonnée</string>
     <string name="label_motif">Motif</string>
@@ -67,4 +67,8 @@
 
     <string name="btn_annuler">Annuler</string>
     <string name="label_base_inscription">INSCRIPTION RANDONNEUR </string>
+
+    <string name="btn_valider_rando">Valider la randonnée</string>
+
+    <string name="btn_date">Date</string>
 </resources>

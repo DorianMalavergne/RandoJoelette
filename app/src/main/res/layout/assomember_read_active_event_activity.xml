@@ -22,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="@dimen/marge_bord_superieur"
                 android:textStyle="bold"
                 android:textSize="23dp"
@@ -71,14 +72,14 @@
                 android:focusable="false"/>
 
             <TextView
-                android:id="@+id/label_nb_participant_requis"
+                android:id="@+id/label_nb_participant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/marge_bord_superieur"
                 android:textStyle="bold"
                 android:textSize="16dp"
-                android:text="@string/nb_participants_requis"
+                android:text="@string/nb_participants"
                 android:focusable="false"/>
 
             <EditText

@@ -24,13 +24,13 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
         TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
         EditText editTextDate = (EditText) findViewById(R.id.saisie_date_rando);
         EditText editTextLieu = (EditText) findViewById(R.id.saisie_postale_adresse);
-        EditText editTextParticipantMin = (EditText) findViewById(R.id.saisie_nombre);
+        EditText editTextParticipant = (EditText) findViewById(R.id.saisie_nombre);
         final EditText editTextDateEcheance = (EditText) findViewById(R.id.saisie_date);
 
         final String libelle = extra.getString("libelle");
         final String date = extra.getString("date");
         final String lieu = extra.getString("lieu");
-        final String participantRequis = extra.getString("participantRequis");
+        final String participant = extra.getString("participantAccepte");
         final String dataEcheance = extra.getString("dataEcheance");
         final int idRandonneur = extra.getInt("idRandonneur");
         final int idRandonnee = extra.getInt("idRandonnee");
@@ -38,7 +38,7 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
         textViewNomRando.setText(libelle);
         editTextDate.setText(date);
         editTextLieu.setText(lieu);
-        editTextParticipantMin.setText(participantRequis);
+        editTextParticipant.setText(participant);
         editTextDateEcheance.setText(dataEcheance);
 
         btn_modifier.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,7 @@ public class handiassomember_read_active_event_activity extends AppCompatActivit
                     extra.putString("libelle", libelle);
                     extra.putString("date", date);
                     extra.putString("lieu", lieu);
-                    extra.putString("participantRequis", participantRequis);
+                    extra.putString("participantRequis", participant);
                     extra.putString("dataEcheance", dataEcheance);
                     extra.putInt("idRandonneur", idRandonneur);
                     extra.putInt("idRandonnee", idRandonnee);

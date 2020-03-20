@@ -33,7 +33,7 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
         EditText editTextDate = (EditText) findViewById(R.id.saisie_date_rando);
         EditText editTextLieu = (EditText) findViewById(R.id.saisie_postale_adresse);
-        EditText editTextParticipantMin = (EditText) findViewById(R.id.saisie_nombre);
+        EditText editTextParticipant = (EditText) findViewById(R.id.saisie_nombre);
         final EditText editTextDateEcheance = (EditText) findViewById(R.id.saisie_date);
         final Button btnOui = findViewById(R.id.btn_oui);
         final Button btnNon = findViewById(R.id.btn_non);
@@ -41,7 +41,7 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         String libelle = extra.getString("libelle");
         String date = extra.getString("date");
         String lieu = extra.getString("lieu");
-        String participantRequis = extra.getString("participantRequis");
+        String participant = extra.getString("participantAccepte");
         String dataEcheance = extra.getString("dataEcheance");
         final int idRandonneur = extra.getInt("idRandonneur");
         final int idRandonnee = extra.getInt("idRandonnee");
@@ -49,14 +49,30 @@ public class Assomember_valid_event_activity extends AppCompatActivity {
         textViewNomRando.setText(libelle);
         editTextDate.setText(date);
         editTextLieu.setText(lieu);
-        editTextParticipantMin.setText(participantRequis);
+        editTextParticipant.setText(participant);
         editTextDateEcheance.setText(dataEcheance);
 
         btnOui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnOui.setEnabled(false);
-                String url = "http://185.224.139.170:8080/valideParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
+                String url = "http://185.224.139.170:8080/ajoutParticipant?idRandonnee=" + idRandonnee + "&handicape=false";
+
+                JsonObjectRequest ajoutParticipant = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //DO NOTHING
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+                queue.add(ajoutParticipant);
+
+                url = "http://185.224.139.170:8080/valideParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET, url, null, new Response.Listener<JSONObject>() {

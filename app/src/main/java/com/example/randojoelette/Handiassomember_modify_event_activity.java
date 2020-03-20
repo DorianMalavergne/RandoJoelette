@@ -57,7 +57,24 @@ public class Handiassomember_modify_event_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnOui.setEnabled(false);
-                String url = "http://185.224.139.170:8080/annuleParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
+
+                String url = "http://185.224.139.170:8080/enleverParticipant?idRandonnee=" + idRandonnee + "&handicape=true";
+
+                JsonObjectRequest enleverParticipant = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //DO NOTHING
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+                queue.add(enleverParticipant);
+
+                url = "http://185.224.139.170:8080/annuleParticipation?idRandonneur=" + idRandonneur + "&idRandonnee=" + idRandonnee;
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET, url, null, new Response.Listener<JSONObject>() {

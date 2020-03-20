@@ -9,6 +9,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
 public class AssoReadActiveEventActivity extends AppCompatActivity {
 
     @Override
@@ -16,10 +25,12 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asso_read_active_event_activity);
 
-        final Button btnModifierRando = (Button) findViewById(R.id.btn_modifier);
+        final Button btnValiderRando = (Button) findViewById(R.id.btn_valider_rando);
 
         Intent intent = getIntent();
         final Bundle extra = intent.getExtras();
+
+        final RequestQueue queue = Volley.newRequestQueue(this);
 
         TextView textViewNomRando = (TextView) findViewById(R.id.label_nom_rando);
         EditText editTextDate = (EditText) findViewById(R.id.date_randonnee);
@@ -44,15 +55,31 @@ public class AssoReadActiveEventActivity extends AppCompatActivity {
         editTextParticipantAccepte.setText(participantAccepte);
         editTextDateEcheance.setText(dataEcheance);
 
-        btnModifierRando.setOnClickListener(new View.OnClickListener() {
+        btnValiderRando.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnModifierRando.setEnabled(false);
-                Intent intent = new Intent(AssoReadActiveEventActivity.this, AssoModifyEventActivity.class);
-                extra.putInt("idRandonneur", idRandonneur);
-                extra.putInt("idRandonnee", idRandonnee);
+                btnValiderRando.setEnabled(false);
+                final Intent intent = new Intent(AssoReadActiveEventActivity.this, AssoMainActivity.class);
+
+                String url = "http://185.224.139.170:8080/validerRandonnee?idRandonnee=" + idRandonnee;
+
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //DO NOTHING
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+
+                queue.add(jsonObjectRequest);
+
                 intent.putExtras(extra);
-                btnModifierRando.setEnabled(true);
+                btnValiderRando.setEnabled(true);
                 startActivity(intent);
             }
         });

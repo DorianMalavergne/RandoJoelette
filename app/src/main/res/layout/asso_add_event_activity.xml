@@ -56,22 +56,41 @@
                 android:textSize="16dp"
                 android:text="@string/date_randonne"/>
 
-            <EditText
-                android:id="@+id/saisie_date_rando"
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marge_horizontale_vue_principale"
-                android:layout_marginRight="@dimen/marge_horizontale_vue_principale"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
-                android:background="@drawable/edittext"
-                android:hint="@string/saisie_date"/>
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/saisie_date_rando"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/marge_verticale_vue_principale"
+                        android:background="@drawable/edittext"
+                        android:hint="@string/saisie_date"
+                        android:layout_marginBottom="30dp"
+                        android:focusable="false"/>
+
+                    <Button
+                        android:id="@+id/btn_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/btn_date"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bouttons2"/>
+                </TableRow>
+            </TableLayout>
 
             <TextView
                 android:id="@+id/label_lieu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/marge_verticale_vue_principale"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:text="@string/lieu"/>
@@ -125,6 +144,15 @@
                 android:layout_marginTop="@dimen/marge_verticale_vue_principale"
                 android:background="@drawable/edittext"
                 android:hint="@string/saisie_echeance"/>
+
+            <Button
+                android:id="@+id/btn_date_echeance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/btn_date"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bouttons2"/>
 
             <Button
                 android:id="@+id/btn_valider"

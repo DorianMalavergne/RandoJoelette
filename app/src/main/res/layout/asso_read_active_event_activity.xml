@@ -22,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="@dimen/marge_bord_superieur"
                 android:textStyle="bold"
                 android:textSize="23dp"
@@ -122,13 +123,13 @@
                 android:focusable="false"/>
 
             <Button
-                android:id="@+id/btn_modifier"
+                android:id="@+id/btn_valider_rando"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/marge_verticale_vue_principale"
                 android:background="@drawable/buttonshape"
-                android:text="@string/btn_modifier_randonnee" />
+                android:text="@string/btn_valider_rando" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
